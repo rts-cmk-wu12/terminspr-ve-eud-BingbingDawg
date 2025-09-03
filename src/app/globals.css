@@ -3,6 +3,7 @@
 :root {
   --background: #5E2E53;
   --foreground: #171717;
+  --secondary-background: #E1A1E9;
   --default-text-color: #EAEAEA;
   --button-text-color:  #E9E9E9;
   --headline-color: #431567;
@@ -14,7 +15,39 @@
   --color-foreground: var(--foreground);
   --color-text: var(--default-text-color);
   --color-button-text: var(--button-text-color);
+  --color-secondary-background: var(--secondary-background);
+  --radius-special: 39px 39px 0px 39px;
+  --radius-overlay-radius: 0px 39px 0px 39px;
 }
+
+/* racing-sans-one-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Racing Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/racing-sans-one-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/roboto-v48-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ubuntu-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/ubuntu-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -26,7 +59,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
 }
 
 @layer components {
@@ -34,10 +67,11 @@ body {
 
 
 .textstroke{
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--headline-color);
+  text-shadow: 0px 0px 1px var(--headline-color);
   color: transparent;
   font-size: 36px;
+  font-family: Roboto;
+  
 }
 .second_span_text{
    color: var(--second-headline-color);
