@@ -14,9 +14,13 @@ Andreas Nielsen, WU12
 
 ## Style-guide
 ### Colors
-* #EAEAEA
 * #5E2E53
+* #171717
 * #E1A1E9
+* #EAEAEA
+* #E9E9E9
+* #431567
+* #E856EB
 * #000000
 
 ### Fonts
@@ -29,3 +33,6 @@ Andreas Nielsen, WU12
 * 18 px
 * 24 px
 * 36 px
+
+## changes in design
+
