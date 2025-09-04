@@ -4,7 +4,7 @@
 import loginAction from "@/actions/login-action";
 import { useActionState } from "react";
 import { ClipLoader } from "react-spinners";
-import ButtonDesign from "../button/button-design";
+import ButtonDesign from "../../ui/button/button-design";
 
 const override = {
     display: "block",

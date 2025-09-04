@@ -8,6 +8,7 @@
   --button-text-color:  #E9E9E9;
   --headline-color: #431567;
   --second-headline-color: #E856EB;
+  --search-color: #C4C4C4;
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   --color-text: var(--default-text-color);
   --color-button-text: var(--button-text-color);
   --color-secondary-background: var(--secondary-background);
+  --color-search-color: var(--search-color);
   --radius-special: 39px 39px 0px 39px;
   --radius-overlay-radius: 0px 39px 0px 39px;
 }
@@ -64,8 +66,6 @@ body {
 
 @layer components {
 
-
-
 .textstroke{
   text-shadow: 0px 0px 1px var(--headline-color);
   color: transparent;
@@ -73,10 +73,29 @@ body {
   font-family: Roboto;
   
 }
+.sitemargin{
+  margin: 28px 28px 0px 28px;
+}
+
 .second_span_text{
    color: var(--second-headline-color);
     -webkit-text-stroke-width: 1px;
      -webkit-text-stroke-color: black;
      font-size: 72px;
+}
+.button-animation{
+  animation: animate 1.5s;
+}
+}
+
+
+@keyframes animate {
+
+from {
+ opacity: 0;
+}
+
+to {
+  opacity: 1;
 }
 }

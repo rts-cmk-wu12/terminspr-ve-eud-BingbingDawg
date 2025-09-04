@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ActivityCard({activity}){
     
     return(
-        <Link href="" className="grid overflow-hidden grid-cols-1 mb-[31px] pl-[26px] pr-[26px]">
+        <Link href={`activities/${activity.id}`} className="grid overflow-hidden grid-cols-1 mb-[31px] ">
             
             <Image className="w-[356px] row-start-1 row-end-2 col-start-1 col-end-2 rounded-special h-[344px] object-cover" src={activity.asset.url} alt="" height="300" width="300" priority/>
 

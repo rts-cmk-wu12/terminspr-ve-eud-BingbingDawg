@@ -1,4 +1,4 @@
-import LoginFormular from "@/ui/login-form";
+import LoginFormular from "@/components/login-form";
 
 export default function Login() {
     return (

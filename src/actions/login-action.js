@@ -21,16 +21,21 @@ export default async function loginAction(prevState, formData){
         ...isValidated,
         ...(z.treeifyError(isValidated))
         }
-    
-    const apiResponse = await fetch (`http://localhost:4000/api/v1/users?username=${isvalidated.data.username}`)
-    const json = await apiResponse.json();
 
-    if (!json.length) return{
-        success: false,
-        errors: ["Brugernavn eller adgangskode er forkert"]
-    }
-    if (json[0].password === isValidated.data.password) {
-        const cookieStore = await cookies();
-        cookieStore.set("loginKey", "Velkommen til Landrup dans, du er nu logget ind")
-    }
+     
+    
+    const apiResponse = await fetch (`http://localhost:4000/auth/token`, {
+        method: "POST",
+        headers: {
+            "Content-Type":  "application/json"
+        },
+        body: JSON.stringify({
+                username: isValidated.data.username,
+                password: isValidated.data.password
+        })
+    })
+    const json = await apiResponse.json();
+    console.log(json)
+
+    
 }
