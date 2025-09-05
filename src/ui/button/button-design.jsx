@@ -16,6 +16,11 @@ export default function ButtonDesign({ className = "", activityid}) {
                 setButtonText("Log in")
                 break;
 
+            case pathname ===  `/signup`:
+                setButtonType("submit")
+                setButtonText("Sign-up")
+                break;
+
             case pathname ===  `/activities/${activityid}`:
                 setButtonType("submit")
                 setButtonText("Tilmeld")

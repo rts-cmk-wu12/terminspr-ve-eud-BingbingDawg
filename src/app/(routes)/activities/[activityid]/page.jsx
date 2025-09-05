@@ -1,4 +1,5 @@
 import ButtonDesign from "@/ui/button/button-design";
+import FooterComponent from "@/ui/footer/footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,6 +28,7 @@ export default async function ActivityDetalisPage({ params }) {
                 </div>
 
             </main>
+            <FooterComponent />
         </div>
     )
 }
