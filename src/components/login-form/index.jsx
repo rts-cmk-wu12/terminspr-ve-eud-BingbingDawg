@@ -2,9 +2,12 @@
 "use client";
 
 import loginAction from "@/actions/login-action";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import ButtonDesign from "../../ui/button/button-design";
+import { toast } from "react-toastify";
+import Link from "next/link";
+
 
 const override = {
     display: "block",
@@ -12,8 +15,15 @@ const override = {
 }
 
 export default function LoginFormular({className=""}) {
-    const [formState, formAction, isPending] = useActionState(loginAction);
+    const [formState, formAction, isPending] = useActionState(loginAction, {});
+    
+    useEffect(function() {
+        if(formState?.success) {
+            toast.success("Du er nu logget ind");
+        }
+    }, [formState]);
 
+    
 
 return isPending ? (
     <ClipLoader 
@@ -37,6 +47,7 @@ return isPending ? (
             </label>
         </div>
         <ButtonDesign className=" mt-[30px] "/>
+            <p className="text-white">har du ikke en konto <Link href="/signup" className="text-amber-400" >Sign-up</Link> her </p>
         <p>{formState?.errors}</p>
     </form>
     </div>
